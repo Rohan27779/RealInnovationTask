@@ -1,0 +1,89 @@
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  line-height: 56px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-role {
+  color: #666;
+}
+
+.user-start-date {
+  color: #666;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 16px;
+  position: relative;
+}
+
+/* employee.component.scss */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.delete-button {
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.delete-button.show-delete {
+  transform: translateX(-100%);
+}
+

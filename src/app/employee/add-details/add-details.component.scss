@@ -1,0 +1,121 @@
+
+@media screen and (max-width: 599px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  mat-form-field {
+    width: 50%;
+  }
+}
+
+
+
+.form-container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 10px;
+}
+
+
+mat-form-field {
+  padding: 1rem;
+}
+
+
+.bottom-sheet-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+mat-list-item {
+  padding: 0.5rem;
+}
+
+.date-pickers-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.date-picker-field {
+  flex: 1;
+}
+.custom-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.custom-today {
+  background-color: #00c9c2;
+  color: white;
+}
+
+.custom-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style the custom icon button */
+button[mat-icon-button] {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+
+.custom-date-picker-panel {
+  padding: 0;
+}
+
+
+.container {
+  /* Set the container as a flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  /* Set the height of the container to fill the viewport */
+  min-height: 100vh;
+  padding: 16px; /* Add some padding for better appearance */
+  position: relative; /* Add relative positioning */
+}
+
+.buttons-container {
+  flex-direction: column;
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    /* For desktop view, set the container to take 70% of the viewport width */
+    width: 70%;
+    margin: 0 auto; /* Center the container horizontally */
+    align-items: center; /* Center the buttons horizontally */
+  }
+}
+
+/* Media query for mobile view */
+@media (max-width: 767px) {
+  .buttons-container {
+    /* For mobile view, stack the buttons vertically */
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

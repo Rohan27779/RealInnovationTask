@@ -1,0 +1,25 @@
+<div class="container">
+  <a mat-icon-button routerLink="/add-details" class="add-button">
+    <mat-icon>add</mat-icon>
+  </a>
+
+  <div *ngIf="users.length > 0; else noUsersMessage">
+    <div class="user-list">
+      <h2 style="color: #0d8eff;">Current Employee</h2>
+      <div *ngFor="let user of users; let i = index" class="user-row" (cdkDragDeleted)="deleteUser(user.id)">
+        <div class="user-info" (click)="editUserDetails(user.id)">
+          <div class="user-name">{{ user.username }}</div>
+          <div class="user-role">{{ user.role }}</div>
+          <div class="user-start-date">{{ user.startDate | date }}</div>
+        </div>
+        <button mat-icon-button cdkDrag cdkDragLockAxis="x" class="delete-button" (click)="deleteUser(user.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noUsersMessage>
+    <p>No users found.</p>
+  </ng-template>
+</div>

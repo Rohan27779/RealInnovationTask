@@ -1,0 +1,64 @@
+<br><br>
+<h2 style="text-align: center;">Add Employee details</h2>
+<div class="form-container">
+  <!-- User Name Input -->
+  <mat-form-field appearance="outline" color="primary">
+    <mat-label>User Name</mat-label>
+    <mat-icon matPrefix class="custom-icon">account_circle</mat-icon>
+    <input matInput placeholder="Enter your username" [(ngModel)]="userName">
+  </mat-form-field>
+
+  <!-- Role Input -->
+  <mat-form-field appearance="outline" color="accent">
+    <mat-label>Role</mat-label>
+    <mat-icon matPrefix class="custom-icon">work_outline</mat-icon>
+    <input matInput placeholder="Select a role" (click)="openBottomSheet()" [value]="selectedRole">
+    <mat-icon class="custom-icon" matSuffix (click)="openBottomSheet()" [value]="selectedRole">arrow_drop_down</mat-icon>
+  </mat-form-field>
+
+  <div class="date-pickers-container">
+    <!-- Start Date Input -->
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>Start Date</mat-label>
+      <mat-icon class="custom-icon" matPrefix>event</mat-icon>
+      <input matInput [matDatepicker]="picker1" placeholder="Today" [(ngModel)]="todayDate" readonly>
+      <mat-datepicker-toggle matSuffix [for]="picker1" [touchUi]="false"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+      <app-custom-date-picker-panel
+        (selectToday)="selectToday()"
+        (selectNextMonday)="selectNextMonday()"
+        (selectNextTuesday)="selectNextTuesday()"
+        (selectAfterOneWeek)="selectAfterOneWeek()"
+      ></app-custom-date-picker-panel>
+    </mat-form-field>
+
+    <!-- End Date Input -->
+    <mat-form-field appearance="outline" color="primary">
+      <mat-label>End Date</mat-label>
+      <mat-icon class="custom-icon" matPrefix>event</mat-icon>
+      <input matInput [matDatepicker]="picker2" placeholder="No date" [(ngModel)]="selectedDate" readonly>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>
+
+<!-- Role Bottom Sheet -->
+<ng-template #roleBottomSheet let-bottomSheetRef="bottomSheetRef">
+  <mat-nav-list class="bottom-sheet-list">
+    <h3 mat-subheader></h3>
+    <mat-list-item *ngFor="let role of roles" (click)="selectRole(role); bottomSheetRef.dismiss()">
+      <span mat-line><b>{{role}}</b></span>
+    </mat-list-item>
+  </mat-nav-list>
+</ng-template>
+
+<!-- Save and Cancel Buttons -->
+
+  <div class="buttons-container">
+    <button mat-button (click)="saveData()" [style.background]="'#0d8eff'" [style.color]="'#ffffff'">Save</button>
+    <button mat-button (click)="cancel()" [style.background]="'#cccccc'" [style.color]="'#000000'">Cancel</button>
+  </div>
+
+
+
