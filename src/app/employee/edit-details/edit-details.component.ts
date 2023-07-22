@@ -8,7 +8,7 @@ import { LocalDataService, User } from '../../local-data-service.service';
   styleUrls: ['./edit-details.component.scss'],
 })
 export class EditDetailsComponent implements OnInit {
-
+  roles = ['product designer', 'flutter developer', 'QA tester', 'Product owner'];
   user: User = {
     username: '',
     role: '',
@@ -24,7 +24,6 @@ export class EditDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Retrieve the user ID from the route parameters
     this.route.params.subscribe((params) => {
       const userId = parseInt(params['id'], 10);
       if (!isNaN(userId)) {

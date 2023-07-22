@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { LocalDataService, User } from '../local-data-service.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -18,9 +19,11 @@ export class EmployeeComponent implements OnInit {
   constructor(private localDataService: LocalDataService,  private router: Router) {}
 
   ngOnInit(): void {
+
     this.localDataService.getAllUsers().then((users) => {
       this.users = users;
     });
+
   }
 
   deleteUser(id: number | undefined): void {

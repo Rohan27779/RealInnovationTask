@@ -19,7 +19,7 @@ export class AddDetailsComponent {
   @ViewChild('picker1') picker1!: MatDatepicker<any>;
   userName: string = '';
 
-  constructor(private router: Router,private bottomSheet: MatBottomSheet, private _dateAdapter: DateAdapter<any>, private localDataService: LocalDataService) {}
+  constructor(private router: Router, private bottomSheet: MatBottomSheet, private _dateAdapter: DateAdapter<any>, private localDataService: LocalDataService) { }
 
   openBottomSheet(): void {
     const bottomSheetRef = this.bottomSheet.open(this.roleBottomSheet);
@@ -69,7 +69,7 @@ export class AddDetailsComponent {
   }
 
   saveData(): void {
-    // Create a new User object from the form data
+
     const newUser: User = {
       username: this.userName,
       role: this.selectedRole || '',
@@ -78,7 +78,7 @@ export class AddDetailsComponent {
       id: 0
     };
 
-    // Add the user data to the local database
+
     this.localDataService.addUser(newUser).then((id) => {
       console.log(`User with ID ${id} added.`);
       this.router.navigate(['/']);
@@ -86,7 +86,7 @@ export class AddDetailsComponent {
   }
 
   cancel(): void {
-    // Clear the form data
+
     this.userName = '';
     this.selectedRole = null;
     this.todayDate = new Date();

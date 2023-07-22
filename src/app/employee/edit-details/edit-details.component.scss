@@ -1,9 +1,9 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Adjust this value to control the vertical spacing between form elements */
-  max-width: 500px; /* Set a max width to limit the form width for desktop view */
-  margin: 0 auto; /* Center the form horizontally */
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .form-field {
@@ -12,11 +12,10 @@
 
 .buttons-container {
   display: flex;
-  justify-content: space-evenly; /* Align buttons with even space between them */
-  margin-top: 20px; /* Add some margin to separate the buttons from the form fields */
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
-/* Add this style to align form items to the left */
 .form-container .mat-form-field-wrapper {
   align-self: flex-start;
 }
